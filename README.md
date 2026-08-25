@@ -369,3 +369,8 @@ NetAnomaly-OW is a functioning, reproducible ML/DL research prototype for privac
 encrypted traffic classification and open-world novelty rejection. It is suitable for research,
 portfolio demonstration, and controlled experimentation—not as a substitute for a production
 security analyst or verified intrusion-detection system.
+
+## License
+
+Copyright © 2026 Nish-011-100. This project is released under the
+[MIT License](LICENSE).
