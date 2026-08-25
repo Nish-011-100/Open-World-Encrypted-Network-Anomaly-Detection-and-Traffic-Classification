@@ -60,19 +60,18 @@ unknown AUROC was lower. It is retained as the strongest early/closed-set neural
 xLSTM-inspired achieved 0.799 accuracy and the best balanced accuracy, plus the strongest 8-packet
 macro-F1 (0.5182), but weak unknown separation. HyenaFlow is weaker for known classification but
 provides a useful gated-long-convolution contrast and 0.6794 unknown AUROC. Neither implementation
-claims exact equivalence to the authors' optimized research packages.
+claims exact equivalence to upstream optimized research packages.
 
-## Legacy reference ablations (not headline models)
+## Legacy ablations (not headline models)
 
-Isolation Forest and the dense autoencoder were evaluated only to reproduce and test ideas from the
-reference GitHub repository. They achieved unknown AUROC 0.5748 and 0.5833 respectively and are no
-longer part of the default benchmark or final model comparison. Their saved reports remain for
-auditability; they are not proposed as final components.
+Isolation Forest and the dense autoencoder were evaluated as legacy ablations. They achieved unknown
+AUROC 0.5748 and 0.5833 respectively and are no longer part of the default benchmark or final model
+comparison. Their saved reports remain for auditability; they are not proposed as final components.
 
-Following the leakage-free design in khush1811/Network-Traffic-Anomaly-Detection, a dense numeric
-autoencoder with Huber reconstruction loss, early stopping, robust calibration scaling, and
-classifier-score fusion was evaluated. It did not improve open-world detection on QUIC application
-holdouts, so it is retained as a reproducible ablation rather than promoted as the final detector.
+A dense numeric autoencoder with Huber reconstruction loss, early stopping, robust calibration
+scaling, and classifier-score fusion was evaluated. It did not improve open-world detection on QUIC
+application holdouts, so it is retained as a reproducible ablation rather than promoted as the final
+detector.
 Tesseract/EasyOCR are OCR tools and are intentionally excluded from packet/flow modeling; they are
 only appropriate if a separate scanned-report or screenshot ingestion feature is required.
 

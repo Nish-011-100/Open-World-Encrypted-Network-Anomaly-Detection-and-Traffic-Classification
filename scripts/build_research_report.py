@@ -120,6 +120,9 @@ def chart_architecture():
 
 
 def footer(canvas, doc):
+    canvas.setAuthor("Nish-011-100")
+    canvas.setTitle("Open-World Encrypted Network Anomaly Detection and Traffic Classification")
+    canvas.setSubject("NetAnomaly-OW research review and experimental report")
     canvas.saveState(); canvas.setStrokeColor(colors.HexColor("#CBD5E1"))
     canvas.line(18*mm, 14*mm, 192*mm, 14*mm); canvas.setFont("Helvetica", 7.5)
     canvas.setFillColor(colors.HexColor("#64748B"))
@@ -267,15 +270,15 @@ def build():
         Image(str(chart_flags()), width=170*mm, height=39*mm),
         Paragraph("Figure 3. Composition of model flags. More flags are not automatically better.", styles["Cap"]),
     ])]
-    story += [Paragraph("11. Comparative Review of the Reference System", styles["H1X"]), Paragraph(
-        "The reference repository correctly emphasizes chronological splitting, train-only preprocessing, percentile thresholds, model agreement, and the distinction between anomalies and verified attacks. NetAnomaly-OW extends this from unlabelled packet anomaly ranking to labelled flow-level open-world application recognition with held-out unknown applications, conformal coverage, early-packet tests and drift windows.", styles["BodyX"])]
-    review = [["Dimension","Reference repository","NetAnomaly-OW"],
-              ["Unit","Packet","Bidirectional encrypted flow"],
-              ["Core models","Isolation Forest + dense AE","Mamba + attention + xLSTM + ensemble"],
-              ["Evaluation","Alert counts and Jaccard agreement","Accuracy, macro-F1, AUROC, coverage, flags"],
-              ["Unknown ground truth","Unavailable","58 held-out applications"],
-              ["Temporal control","70/30 chronological split","Week-to-week train/calibration/test"]]
-    rt = Table(review, colWidths=[35*mm,61*mm,74*mm], repeatRows=1)
+    story += [Paragraph("11. Reproducibility and Repository Deliverables", styles["H1X"]), Paragraph(
+        "The repository separates reusable source code, experiment configuration, validation, analysis notebooks, saved evidence and technical documentation. This structure supports transparent reruns, focused review and extension of each modelling pipeline.", styles["BodyX"])]
+    deliverables = [["Deliverable","Repository location","Purpose"],
+                    ["Python package","src/driftmamba","Data, models, calibration and inference"],
+                    ["Automated verification","tests/ and .github/workflows/ci.yml","Regression tests and lint checks"],
+                    ["Reproducible analysis","notebooks/ and results/","Data plots and benchmark comparisons"],
+                    ["Experiment automation","scripts/ and configs/","Dataset export, training and report generation"],
+                    ["Technical evidence","output/pdf/ and docs/","Architecture, results, limitations and handoff"]]
+    rt = Table(deliverables, colWidths=[40*mm,60*mm,70*mm], repeatRows=1)
     rt.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,0),colors.HexColor(NAVY)),("TEXTCOLOR",(0,0),(-1,0),colors.white),("FONTNAME",(0,0),(-1,0),"Helvetica-Bold"),("GRID",(0,0),(-1,-1),.35,colors.HexColor("#CBD5E1")),("FONTSIZE",(0,0),(-1,-1),7.5),("VALIGN",(0,0),(-1,-1),"TOP"),("ROWBACKGROUNDS",(0,1),(-1,-1),[colors.white,colors.HexColor("#F8FAFC")]),("TOPPADDING",(0,0),(-1,-1),5),("BOTTOMPADDING",(0,0),(-1,-1),5)]))
     story += [rt, Paragraph("12. Evidence Gaps and Threats to Validity", styles["H1X"]), Paragraph(
         "The present results are genuine but bounded: they use one dataset edition, one chronological transition, and one random seed. The following evidence is required before making strong generalization or deployment claims.", styles["BodyX"])]
@@ -289,7 +292,7 @@ def build():
     mt.setStyle(TableStyle([("BACKGROUND",(0,0),(-1,0),colors.HexColor(TEAL)),("TEXTCOLOR",(0,0),(-1,0),colors.white),("FONTNAME",(0,0),(-1,0),"Helvetica-Bold"),("GRID",(0,0),(-1,-1),.35,colors.HexColor("#CBD5E1")),("FONTSIZE",(0,0),(-1,-1),7.4),("VALIGN",(0,0),(-1,-1),"TOP"),("ROWBACKGROUNDS",(0,1),(-1,-1),[colors.white,colors.HexColor("#F8FAFC")]),("TOPPADDING",(0,0),(-1,-1),2),("BOTTOMPADDING",(0,0),(-1,-1),2)]))
     story += [mt, Paragraph("13. Conclusions and Recommended Operating Modes", styles["H1X"]), Paragraph(
         "The heterogeneous ensemble is the preferred classification mode, reaching 0.823 accuracy and 0.7264 macro-F1. DriftMamba-12 is the unknown-sensitive option, with 0.7011 unknown AUROC and 292 held-out detections at 89.0% known acceptance. The Transformer prioritizes raw accuracy, while xLSTM is useful at early packet budgets. The large not-flagged count reflects conservative rejection and should change only after measuring known-flow false rejection. The defensible contribution is a complementary four-pipeline comparison under a leakage-free open-world protocol, not production attack attribution.", styles["BodyX"]), Paragraph(
-        "Sources: CESNET DataZoo; khush1811 reference repository; xLSTM (NeurIPS 2024); Hyena (ICML 2023); TabPFN (Nature 2025).", styles["Cap"])]
+        "NetAnomaly-OW | Results generated from saved experiment artifacts.", styles["Cap"])]
     doc.build(story)
 
 

@@ -353,14 +353,6 @@ Analyze only traffic that you own or are authorized to inspect. Captures may exp
 domains, application usage, or payload content. The project redacts endpoint identifiers and avoids
 payload decryption, but users remain responsible for lawful data collection, storage, and sharing.
 
-## Reference and acknowledgement
-
-Leakage controls and the distinction between anomalies and verified attacks were informed by
-[`khush1811/Network-Traffic-Anomaly-Detection`](https://github.com/khush1811/Network-Traffic-Anomaly-Detection).
-Its Isolation Forest and dense-autoencoder ideas remain legacy ablations. The final NetAnomaly-OW
-comparison focuses on DriftMamba, a causal Transformer, xLSTM-inspired recurrence, and their
-heterogeneous ensemble.
-
 ## Roadmap
 
 - repeat the benchmark over 3-5 seeds with confidence intervals;
