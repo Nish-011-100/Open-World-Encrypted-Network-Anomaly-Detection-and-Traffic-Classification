@@ -328,10 +328,6 @@ The public project name is **NetAnomaly-OW**. The internal `driftmamba` Python n
 `driftmamba-*` CLI prefix are retained intentionally because DriftMamba is the primary proposed
 encoder and these names form the stable implementation interface.
 
-The public project name is **NetAnomaly-OW**. The internal `driftmamba` Python namespace and
-`driftmamba-*` CLI prefix are retained intentionally because DriftMamba is the primary proposed
-encoder and these names form the stable implementation interface.
-
 ## Research report
 
 [`output/pdf/NetAnomaly_OW_Research_Review.pdf`](output/pdf/NetAnomaly_OW_Research_Review.pdf)
@@ -372,5 +368,5 @@ security analyst or verified intrusion-detection system.
 
 ## License
 
-Copyright © 2026 Nish-011-100. This project is released under the
+Copyright © 2026 Nishika Manish Kakrecha. This project is released under the
 [MIT License](LICENSE).
