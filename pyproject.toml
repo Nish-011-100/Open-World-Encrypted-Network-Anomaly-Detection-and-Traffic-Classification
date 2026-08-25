@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netanomaly-ow"
+version = "0.1.0"
+description = "Open-world encrypted network anomaly detection and traffic classification"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "joblib>=1.3,<2",
+  "numpy>=1.24,<3",
+  "pandas>=2.0,<3",
+  "scikit-learn>=1.3,<2",
+]
+
+[project.optional-dependencies]
+deep = ["torch>=2.1,<3", "mamba-ssm>=2.2,<3; platform_system != 'Windows'"]
+dev = ["pytest>=7.4,<9", "ruff>=0.5,<1"]
+notebooks = ["jupyter>=1.0,<2", "matplotlib>=3.8,<4", "seaborn>=0.13,<1"]
+datazoo = ["cesnet-datazoo>=0.2,<1"]
+
+[project.scripts]
+driftmamba-build-flows = "driftmamba.cli.build_flows:main"
+driftmamba-prepare = "driftmamba.cli.prepare_dataset:main"
+driftmamba-train-baselines = "driftmamba.cli.train_baselines:main"
+driftmamba-train-deep = "driftmamba.cli.train_deep:main"
+driftmamba-detect = "driftmamba.cli.detect:main"
+driftmamba-export-datazoo = "driftmamba.cli.export_datazoo:main"
+driftmamba-train-autoencoder = "driftmamba.cli.train_autoencoder:main"
+driftmamba-evaluate-ensemble = "driftmamba.cli.evaluate_ensemble:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

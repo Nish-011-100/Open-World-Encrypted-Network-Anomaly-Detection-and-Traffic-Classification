@@ -1,0 +1,5 @@
+observed_packets,known_macro_f1,unknown_auroc
+8,0.3893,0.6608
+16,0.5005,0.6611
+32,0.6435,0.7011
+64,0.6435,0.7011

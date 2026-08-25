@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "maximum_packets": 64,
+  "flow_timeout_seconds": 60.0,
+  "train_fraction": 0.70,
+  "calibration_fraction": 0.15,
+  "unknown_class_fraction": 0.20,
+  "target_coverage": 0.90,
+  "model_dimension": 64,
+  "embedding_dimension": 64,
+  "state_space_blocks": 3,
+  "prototypes_per_class": 2,
+  "epochs": 30,
+  "batch_size": 256,
+  "learning_rate": 0.001
+}

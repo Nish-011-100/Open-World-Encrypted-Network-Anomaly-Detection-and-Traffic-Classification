@@ -1,0 +1,5 @@
+model,total_flagged,known_flagged,unknown_flagged,not_flagged,unknown_recall,known_acceptance
+DriftMamba-12,402,110,292,1598,0.292,0.890
+Transformer,278,88,190,1722,0.190,0.912
+xLSTM-inspired,237,92,145,1763,0.145,0.908
+Deep Ensemble,167,51,116,1833,0.116,0.949

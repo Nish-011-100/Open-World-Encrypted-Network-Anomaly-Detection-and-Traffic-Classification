@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "NetAnomaly: Run inference",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "driftmamba.cli.detect",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": [
+        "--input", "data/processed/datazoo_smoke/test_known.csv",
+        "--models-directory", "artifacts/datazoo_smoke/driftmamba_12ep",
+        "--preprocessor", "data/processed/datazoo_smoke/aggregate_preprocessor.joblib",
+        "--output", "reports/local_run/known_test_predictions.csv",
+        "--maximum-packets", "64", "--alpha", "0.10"
+      ]
+    },
+    {
+      "name": "NetAnomaly: Quick train (1 epoch)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "driftmamba.cli.train_deep",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": [
+        "--data-directory", "data/processed/datazoo_smoke",
+        "--models-directory", "artifacts/quick_test/driftmamba",
+        "--reports-directory", "reports/quick_test/driftmamba",
+        "--encoder", "driftmamba", "--epochs", "1",
+        "--batch-size", "128", "--alpha", "0.10", "--seed", "42"
+      ]
+    },
+    {
+      "name": "NetAnomaly: Build report",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/build_research_report.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {"MPLBACKEND": "Agg"}
+    }
+  ]
+}

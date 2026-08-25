@@ -1,0 +1,5 @@
+model,accuracy,balanced_accuracy,macro_f1,unknown_auroc,best_use
+Deep Ensemble,0.8230,0.7191,0.7264,0.6433,Overall classification
+Transformer,0.8060,0.7046,0.6981,0.6090,Raw accuracy
+xLSTM-inspired,0.7990,0.7087,0.6901,0.5643,Early classification
+DriftMamba-12,0.7550,0.6253,0.6435,0.7011,Unknown separation
