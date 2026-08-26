@@ -146,7 +146,9 @@ def build():
                               textColor=colors.HexColor("#111827")))
     styles.add(ParagraphStyle(name="CellHead", parent=styles["Cell"], fontName="Helvetica-Bold",
                               textColor=colors.white))
-    doc = BaseDocTemplate(str(OUT / "NetAnomaly_OW_Research_Review.pdf"), pagesize=A4,
+    doc = BaseDocTemplate(
+        str(OUT / "Open-World-Encrypted-Network-Anomaly-Detection-and-Traffic-Classification-Report.pdf"),
+        pagesize=A4,
                           rightMargin=18*mm, leftMargin=18*mm, topMargin=16*mm, bottomMargin=18*mm)
     doc.addPageTemplates(PageTemplate(id="main", frames=Frame(18*mm, 18*mm, 174*mm, 263*mm,
                                                                id="body"), onPage=footer))

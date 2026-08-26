@@ -4,7 +4,7 @@
 |---|---|
 | [`PROJECT_HANDOFF.md`](PROJECT_HANDOFF.md) | Motivation, design, reproducibility workflow, and presentation guidance |
 | [`EXPERIMENT_RESULTS.md`](EXPERIMENT_RESULTS.md) | Verified results, ablations, acceptance criteria, and claim boundaries |
-| [`Research review`](../output/pdf/NetAnomaly_OW_Research_Review.pdf) | Rendered architecture, metrics, and operational analysis |
+| [`Research review`](../output/pdf/Open-World-Encrypted-Network-Anomaly-Detection-and-Traffic-Classification-Report.pdf) | Rendered architecture, metrics, and operational analysis |
 
 ## Notebooks
 

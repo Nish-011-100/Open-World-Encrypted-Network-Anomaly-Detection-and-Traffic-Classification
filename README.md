@@ -377,7 +377,7 @@ encoder and these names form the stable implementation interface.
 
 ## Research report
 
-[`output/pdf/NetAnomaly_OW_Research_Review.pdf`](output/pdf/NetAnomaly_OW_Research_Review.pdf)
+[`Open-World-Encrypted-Network-Anomaly-Detection-and-Traffic-Classification-Report.pdf`](output/pdf/Open-World-Encrypted-Network-Anomaly-Detection-and-Traffic-Classification-Report.pdf)
 contains the protocol, architecture, model mechanics, results, risk analysis, and threats to validity.
 
 ## Limitations
