@@ -174,6 +174,20 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[deep,notebooks,datazoo,dev]"
 ```
 
+## What a fresh GitHub clone contains
+
+A fresh clone contains the complete source code, tests, configuration, executed notebooks with
+embedded plots, tracked benchmark summaries, and the research PDF. Large CESNET datasets, generated
+model checkpoints, and detailed per-flow reports are intentionally Git-ignored.
+
+Therefore:
+
+- tests, linting, documentation, tracked plots, and the research report work immediately after
+  dependency installation;
+- fresh training requires preparing the CESNET data first;
+- command-line inference requires a checkpoint and preprocessor produced by training;
+- `artifacts/` and `reports/` are created automatically when the relevant commands run.
+
 ## Running in VS Code
 
 1. Open `NetAnomaly-OW.code-workspace`.
@@ -186,10 +200,25 @@ python -m pip install -e ".[deep,notebooks,datazoo,dev]"
 
 The workspace also provides installation, test, and Ruff tasks.
 
-## Quick start with the included artifacts
+## Verify a fresh clone
 
 ```powershell
 python -m pytest -q
+ruff check .
+```
+
+Expected result:
+
+```text
+11 passed
+All checks passed!
+```
+
+## Run inference after training
+
+After preparing data and training a model, run:
+
+```powershell
 
 driftmamba-detect `
   --input data\processed\datazoo_smoke\test_known.csv `
@@ -283,9 +312,12 @@ jupyter lab notebooks
   duration/volume relationships, and packet profiles.
 - `02_model_evaluation.ipynb`: model comparison, novelty trade-offs, flag composition, acceptance,
   unknown recall, and early-flow performance.
+- `03_model_training.ipynb`: reproducible DriftMamba, Transformer, and xLSTM training commands,
+  training/calibration loss curves, and best-epoch comparison. Its tracked plots work immediately;
+  set `RUN_TRAINING = True` only after preparing the processed dataset to train fresh models.
 
-Small values in `results/` are tracked so evaluation plots work after cloning. Large predictions,
-datasets, and checkpoints remain Git-ignored.
+Small benchmark values and training histories in `results/` are tracked so evaluation and convergence
+plots work after cloning. Large predictions, datasets, and checkpoints remain Git-ignored.
 
 ## CLI reference
 
