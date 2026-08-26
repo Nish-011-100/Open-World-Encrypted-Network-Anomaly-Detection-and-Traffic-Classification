@@ -310,7 +310,7 @@ NetAnomaly-OW/
 |-- data/raw/                Downloaded datasets (ignored)
 |-- data/processed/          Prepared splits (ignored)
 |-- docs/                    Research handoff and results notes
-|-- notebooks/               Data and evaluation plots
+|-- notebooks/               Exploration, training, and evaluation plots
 |-- output/pdf/              Final research report
 |-- reports/                 Detailed generated outputs (ignored)
 |-- results/                 Small tracked benchmark summaries
