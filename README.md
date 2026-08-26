@@ -174,9 +174,9 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[deep,notebooks,datazoo,dev]"
 ```
 
-## What a fresh GitHub clone contains
+## What a GitHub clone contains
 
-A fresh clone contains the complete source code, tests, configuration, executed notebooks with
+A clone contains the complete source code, tests, configuration, executed notebooks with
 embedded plots, tracked benchmark summaries, and the research PDF. Large CESNET datasets, generated
 model checkpoints, and detailed per-flow reports are intentionally Git-ignored.
 
