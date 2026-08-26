@@ -336,23 +336,40 @@ plots work after cloning. Large predictions, datasets, and checkpoints remain Gi
 
 ```text
 NetAnomaly-OW/
-|-- .vscode/                 VS Code launch profiles and tasks
-|-- artifacts/               Local checkpoints (generated, ignored)
-|-- configs/                 Experiment configuration
-|-- data/raw/                Downloaded datasets (ignored)
-|-- data/processed/          Prepared splits (ignored)
-|-- docs/                    Research handoff and results notes
-|-- notebooks/               Exploration, training, and evaluation plots
-|-- output/pdf/              Final research report
-|-- reports/                 Detailed generated outputs (ignored)
-|-- results/                 Small tracked benchmark summaries
+|-- .github/workflows/       Continuous-integration checks
+|-- .vscode/                 VS Code settings, launch profiles, and tasks
+|-- configs/                 Reproducible experiment configuration
+|-- data/
+|   |-- raw/README.md        Raw-data placement instructions
+|   `-- processed/README.md  Prepared-data layout instructions
+|-- docs/
+|   |-- EXPERIMENT_RESULTS.md
+|   |-- PROJECT_HANDOFF.md
+|   `-- README.md
+|-- notebooks/
+|   |-- 01_data_exploration.ipynb
+|   |-- 02_model_evaluation.ipynb
+|   `-- 03_model_training.ipynb
+|-- output/pdf/              Final rendered research report
+|-- results/
+|   |-- model_comparison.csv
+|   |-- flagging_summary.csv
+|   |-- early_classification.csv
+|   `-- training_history.csv
 |-- scripts/                 Experiment and report automation
-|-- src/driftmamba/          Installable Python implementation
-|-- tests/                   Regression and pipeline tests
+|-- src/driftmamba/          Installable Python package and CLI implementation
+|-- tests/                   Data, model, inference, and pipeline tests
+|-- .gitignore
+|-- LICENSE
 |-- NetAnomaly-OW.code-workspace
 |-- pyproject.toml
 `-- README.md
 ```
+
+Training and inference create `artifacts/` for checkpoints and `reports/` for detailed metrics and
+per-flow predictions. These runtime directories are intentionally Git-ignored and therefore do not
+appear in a fresh clone until a relevant command is executed. Downloaded and processed dataset files
+are likewise ignored; only their placement instructions are tracked.
 
 The public project name is **NetAnomaly-OW**. The internal `driftmamba` Python namespace and
 `driftmamba-*` CLI prefix are retained intentionally because DriftMamba is the primary proposed
