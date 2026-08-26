@@ -16,11 +16,9 @@ models/**
 reports/**
 tmp/**
 
-# Keep directory documentation/placeholders
+# Keep dataset directory documentation
 !data/raw/README.md
 !data/processed/README.md
-!artifacts/README.md
-!reports/README.md
 
 # Generated exports (the final reviewed report is intentionally retained)
 output/pdf/DriftMamba_ETC_Research_Review.pdf
