@@ -35,7 +35,6 @@ The project demonstrates:
 - heterogeneous ensemble voting;
 - classification after 8, 16, 32, or 64 packets;
 - chronological feature and embedding-drift audits;
-- CLI training/inference, VS Code profiles, notebooks, tests, and a research report.
 
 ## Verified project status
 
@@ -49,7 +48,6 @@ The repository has been exercised locally with the official CESNET-QUIC22 XS edi
 | Known-test acceptance | 890/1,000 (**89.0%**) |
 | Known-test rejection | 110/1,000 (**11.0%**) |
 | Mean conformal set size | **1.53** labels |
-| Final report | Five-page rendered and visually checked PDF |
 
 ## Headline benchmark
 

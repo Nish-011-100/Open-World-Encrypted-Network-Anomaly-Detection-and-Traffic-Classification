@@ -1,9 +1,5 @@
 # Open-World Encrypted Network Anomaly Detection and Traffic Classification
 
-**Project identifier:** NetAnomaly-OW
-
-## One-line pitch
-
 NetAnomaly-OW classifies encrypted QUIC applications without payload inspection, rejects unseen
 applications with calibrated uncertainty, and detects when live traffic drifts away from training.
 

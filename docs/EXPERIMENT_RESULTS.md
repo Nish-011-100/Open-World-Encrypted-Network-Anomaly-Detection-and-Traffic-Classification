@@ -62,7 +62,7 @@ macro-F1 (0.5182), but weak unknown separation. HyenaFlow is weaker for known cl
 provides a useful gated-long-convolution contrast and 0.6794 unknown AUROC. Neither implementation
 claims exact equivalence to upstream optimized research packages.
 
-## Legacy ablations (not headline models)
+## Legacy ablations
 
 Isolation Forest and the dense autoencoder were evaluated as legacy ablations. They achieved unknown
 AUROC 0.5748 and 0.5833 respectively and are no longer part of the default benchmark or final model
